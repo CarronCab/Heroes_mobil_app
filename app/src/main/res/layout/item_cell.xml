@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.charl.heroes.ItemViewModel"/>
+        <variable
+            name="test"
+            type="com.example.charl.heroes.ItemListViewModel">
+
+        </variable>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.newHero}"
+            android:id="@+id/name"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="5dp"
+            android:onClick="@{() -> viewModel.delete()}"
+            android:text="delete hero" />
+
+    </RelativeLayout>
+</layout>
